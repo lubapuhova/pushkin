@@ -10,7 +10,7 @@
     {% for row in data %}
     <li>
         <a href="{{ url_for('show_poem',
-n = loop.index0+1) }}">
+n = loop.index) }}">
            {{ row['title'] }}
         </a>
     </li>
