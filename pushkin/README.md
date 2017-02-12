@@ -1,2 +1,0 @@
-# pushkin
-my pushkin project
