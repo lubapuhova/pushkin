@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>MainPushkin</title>
-    <script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 <h1>All you need is Pushkin</h1>
@@ -11,7 +10,7 @@
     {% for row in data %}
     <li>
         <a href="{{ url_for('show_poem',
-n = loop.index0) }}">
+n = loop.index0+1) }}">
            {{ row['title'] }}
         </a>
     </li>
