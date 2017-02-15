@@ -5,7 +5,7 @@
     <title>poem</title>
     <style>
   body {
-    background: url(https://basik.ru/images/water_wallpapers_53/008_wallpaper.jpg);
+    background: url(http://kobmer.ru/www/11/derevyannyy_fon_svetlyy_tekstura_3036x2000.jpg);
    }
     </style>
 </head>
@@ -15,6 +15,10 @@
 <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="http://dj-projects.wikisociety.info/pl">All poems</a></li>
+              <li class="active">
+                  <button onclick = "next(event)">Next poem</button>
+                  <button onclick = "previous(event)">Previous poem</button>
+              </li>
             </ul>
 </div>
 <div align="center" class="panel panel-info">
@@ -29,5 +33,18 @@
     {% endfor %}
     </div>
 </div>
+<script>
+    function next(event) {
+    alert(index)
+    }
+
+    $(document).ready(function() {
+        $(".preview_button").click(
+            function () {
+                show_picture($(this).data('index'))
+             }
+         )
+    })
+</script>
 </body>
 </html>
