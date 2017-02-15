@@ -29,7 +29,7 @@ def show_poem(n):
     data = get_data()
     row = data[n]
     return render_template("show_poem.html",
-                           row=row)
+                           row=row, n=n+1)
 
 
 

@@ -14,10 +14,12 @@
 
 <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="http://dj-projects.wikisociety.info/pl">All poems</a></li>
               <li class="active">
-                  <button onclick = "next(event)">Next poem</button>
-                  <button onclick = "previous(event)">Previous poem</button>
+                  <a href="http://dj-projects.wikisociety.info/pl">All poems</a>
+                  <a href="{{ url_for('show_poem',
+n = n+1 ) }}">Next poem</a>
+                  <a href="{{ url_for('show_poem',
+n = n-1 ) }}">Previous poem</a>
               </li>
             </ul>
 </div>
@@ -33,18 +35,6 @@
     {% endfor %}
     </div>
 </div>
-<script>
-    function next(event) {
-    alert(index)
-    }
 
-    $(document).ready(function() {
-        $(".preview_button").click(
-            function () {
-                show_picture($(this).data('index'))
-             }
-         )
-    })
-</script>
 </body>
 </html>
