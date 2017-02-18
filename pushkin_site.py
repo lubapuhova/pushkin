@@ -27,11 +27,12 @@ def main_page():
 @app.route('/poem/<int:n>')
 def show_poem(n):
     n = n-1
-    m = rnd.randrange(1, 231, 1)
+    # m = rnd.randrange(1, 231, 1)
+    m = 45
     data = get_data()
     row = data[n]
     return render_template("show_poem.html",
-                           row=row, n=n+1, m=65)
+                           row=row, n=n+1, m=m)
 
 
 
