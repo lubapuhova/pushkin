@@ -49,5 +49,9 @@ def random_ch():
     return render_template("random_ch.html",
                            row = row)
 
+@app.route('/luba')
+def luba():
+    return Luba
+
 if __name__ == '__main__':
     app.run()
