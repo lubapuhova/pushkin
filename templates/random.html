@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>random poem</title>
+    <style>
+  body {
+    background: url(http://kobmer.ru/www/11/derevyannyy_fon_svetlyy_tekstura_3036x2000.jpg);
+   }
+    </style>
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <body>
-{% for r in row['verses'] %}
+<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                  <a href="http://dj-projects.wikisociety.info/pl">All poems</a>
+                  <a href="{{ url_for('show_poem',
+n = n+1 ) }}">Next poem</a>
+                  <a href="{{ url_for('show_poem',
+n = n-1 ) }}">Previous poem</a>
+              </li>
+            </ul>
+</div>
+<div align="center" class="panel panel-info">
+    <div class="panel-heading">
+    {% for r in row['title'] %}
+    <p>{{ r }} </p>
+    {% endfor %}
+    </div>
+    <div class="panel-body">
+    {% for r in row['verses'] %}
     <p> {{ r }} </p>
-{% endfor %}
+    {% endfor %}
+    </div>
+</div>
 </body>
 </html>

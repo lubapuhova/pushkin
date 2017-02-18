@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import requests
+import requests, random
 
 
 app = Flask(__name__)
@@ -31,6 +31,13 @@ def show_poem(n):
     row = data[n]
     return render_template("show_poem.html",
                            row=row, n=n+1)
+
+@app.route('/random')
+def random_choice():
+    m = random.randrange(1, 231, 1)
+    data = get_data()
+    row = data[m]
+    return render_template("random.html", row = row)
 
 if __name__ == '__main__':
     app.run()
