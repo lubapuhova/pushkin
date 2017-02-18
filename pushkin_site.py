@@ -19,8 +19,6 @@ def get_data():
                 row['title'] = row['verses'][1]
     return m['poems']
 
-
-
 @app.route('/')
 def main_page():
     return render_template("main_page.html",
@@ -28,33 +26,23 @@ def main_page():
 
 @app.route('/poem/<int:n>')
 def show_poem(n):
-    n =n-1
+    n = n-1
+    m = rnd.randrange(1, 231, 1)
     data = get_data()
     row = data[n]
     return render_template("show_poem.html",
-                           row=row, n=n+1)
+                           row=row, n=n+1, m=m)
 
-#@app.route('/vojta')
-#def vojta():
- #   m = rnd.randrange(1, 231, 1)
-  #  data = get_data()
-   # row = data[m]
-    #return render_template('random_ch.html', row = row)
 
-@app.route('/random_ch')
-def random_ch():
-    m = rnd.randrange(1, 231, 1)
-    data = get_data()
-    row = data[m]
-    return render_template("random_ch.html",
-                           row = row)
 
-@app.route('/luba')
-def luba():
-    data = get_data()
-    row = data[5]
-    return render_template("luba.html",
-                           row=row)
+# @app.route('/random_ch/<int:n>')
+# def random_ch():
+#     n = rnd.randrange(1, 231, 1)
+#     data = get_data()
+#     row = data[n-1]
+#     return render_template("random_ch.html",
+#                            row = row, n=n+1)
+
 
 if __name__ == '__main__':
     app.run()
