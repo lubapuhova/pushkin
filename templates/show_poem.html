@@ -15,7 +15,7 @@
 <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active">
-                  <a href="http://dj-projects.wikisociety.info/pl">All poems</a>
+                  <a href="{{ url_for('main_page') }}">All poems</a>
                   <a href="{{ url_for('show_poem',
 n = n+1 ) }}">Next poem</a>
                   <a href="{{ url_for('show_poem',

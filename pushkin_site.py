@@ -34,12 +34,20 @@ def show_poem(n):
     return render_template("show_poem.html",
                            row=row, n=n+1)
 
-@app.route('/random')
+#@app.route('/vojta')
+#def vojta():
+ #   m = rnd.randrange(1, 231, 1)
+  #  data = get_data()
+   # row = data[m]
+    #return render_template('random_ch.html', row = row)
+
+@app.route('/random_ch')
 def random_ch():
     m = rnd.randrange(1, 231, 1)
     data = get_data()
     row = data[m]
-    return render_template("random_ch.html", row = row)
+    return render_template("random_ch.html",
+                           row = row)
 
 if __name__ == '__main__':
     app.run()
