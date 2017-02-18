@@ -39,7 +39,7 @@ def random_ch():
     m = rnd.randrange(1, 231, 1)
     data = get_data()
     row = data[m]
-    return render_template("random.html", row = row)
+    return render_template("random_ch.html", row = row)
 
 if __name__ == '__main__':
     app.run()
