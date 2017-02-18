@@ -31,7 +31,7 @@ def show_poem(n):
     data = get_data()
     row = data[n]
     return render_template("show_poem.html",
-                           row=row, n=n+1, m=m)
+                           row=row, n=n+1, m=65)
 
 
 
